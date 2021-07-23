@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--create object with Spring-->
+    <bean id="mysqlImpl" class="com.dao.UserDaoMySqlImpl"/>
+    <bean id="oracleImpl" class="com.dao.UserDaoOracleImpl"/>
+    <bean id="userServiceImpl" class="com.service.UserServiceImpl">
+        <!--
+        ref: reference objects that already exists in Beams
+        value: concrete value of basic data types
+        -->
+        <property name="userDao" ref="oracleImpl"/>
+    </bean>
+</beans>
