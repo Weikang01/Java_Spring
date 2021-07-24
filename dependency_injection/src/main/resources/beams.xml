@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address" class="com.pojo.Address">
+        <property name="address" value="33, Boxer Road, ON"/>
+    </bean>
+
+    <bean id="student" class="com.pojo.Student">
+        <!--1st type: ordinary value injection-->
+        <property name="name" value="Henry"/>
+        <!--2nd type: Beam injection-->
+        <property name="address" ref="address"/>
+        <property name="books">
+            <array>
+                <value>Harry Potter</value>
+                <value>Lord of the Rings</value>
+            </array>
+        </property>
+        <property name="hobbies">
+            <list>
+                <value>watching TV</value>
+                <value>playing video games</value>
+            </list>
+        </property>
+        <property name="cards">
+            <map>
+                <entry key="restaurant" value="12312354442x"/>
+                <entry key="transportation" value="AM2999301"/>
+            </map>
+        </property>
+        <property name="games">
+            <set>
+                <value>Call of Duty</value>
+                <value>League of Legend</value>
+            </set>
+        </property>
+        <property name="spouse">
+            <null/>
+        </property>
+        <property name="info">
+            <props>
+                <prop key="ID">15552</prop>
+                <prop key="gender">M</prop>
+                <prop key="name">Henry Tester</prop>
+            </props>
+        </property>
+
+    </bean>
+
+</beans>
