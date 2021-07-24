@@ -11,4 +11,15 @@
         <!--        <constructor-arg name="name" value="Henry injected by param name"/>-->
         <constructor-arg name="name" value="Henry injected by param name"/>
     </bean>
+
+    <!--Alias-->
+    <alias name="user" alias="userAlias"/>
+
+    <!--
+    <bean id="user" class="com.pojo.User" name="name1, name2; name3 name4"/>
+    id: unique identifier of beam, aka object name
+    class: package + class name
+    name: equals to alias, one object can have multiple names
+    -->
+
 </beans>
