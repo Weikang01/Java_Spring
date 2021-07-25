@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="cat" class="com.pojo.Cat"/>
+    <bean id="dog111" class="com.pojo.Dog"/>
+
+    <!--
+    https://docs.spring.io/spring-framework/docs/5.2.0.RELEASE/spring-framework-reference/core.html#beans-factory-autowire
+    byName: Autowiring by property name. Spring looks for a bean with the same name
+     as the property that needs to be autowired. For example, if a bean definition
+     is set to autowire by name and it contains a master property (that is, it has
+     a setMaster(..) method), Spring looks for a bean definition named master and
+     uses it to set the property.
+
+    <bean id="cat" class="com.pojo.Cat"/>
+    <bean id="dog" class="com.pojo.Dog"/>
+    <bean id="human" class="com.pojo.Human" autowire="byName">
+        <property name="name" value="Franc"/>
+    </bean>
+
+    byType: Lets a property be autowired if exactly one bean of the property type
+    exists in the container. If more than one exists, a fatal exception is thrown,
+    which indicates that you may not use byType autowiring for that bean. If there
+    are no matching beans, nothing happens (the property is not set).
+
+    <bean class="com.pojo.Cat"/>
+    <bean class="com.pojo.Dog"/>
+    <bean id="human" class="com.pojo.Human" autowire="byType">
+        <property name="name" value="Franc"/>
+    </bean>
+    -->
+    <bean id="human" class="com.pojo.Human" autowire="byType">
+        <property name="name" value="Franc"/>
+    </bean>
+</beans>

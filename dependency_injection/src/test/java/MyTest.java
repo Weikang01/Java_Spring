@@ -6,7 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MyTest {
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("beams.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
         Student student = (Student) context.getBean("student");
         System.out.println(student);
     }
@@ -14,7 +14,7 @@ public class MyTest {
     @Test
     public void test()
     {
-        ApplicationContext context = new ClassPathXmlApplicationContext("userBeams.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("userBeans.xml");
         User user = (User) context.getBean("user");
         User user2 = (User) context.getBean("user");
 
